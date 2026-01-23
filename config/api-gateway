@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: 8080
 
 spring:
   application:
@@ -22,7 +22,7 @@ spring:
         - id: order-service
           uri: lb://order-service
           predicates:
-            - Path=/order/**
+            - Path=/orders/**
   
 
         - id: inventory-service
@@ -34,20 +34,19 @@ spring:
         - id: payment-service
           uri: lb://payment-service
           predicates:
-            - Path=/payment/**
+            - Path=/payments/**
 
 
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/product/**
+            - Path=/products/**
 
 
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user/**
-
+            - Path=/users/**
 
 eureka:
   client:
